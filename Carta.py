@@ -22,7 +22,8 @@ class Carta:
         dvalor['A'] = 14
         
         return dvalor
-        
+
+    # Imprime la carta    
     def despliega(self):        
         print(f"{self.letra} | {self.simbolo} | {self.valor}")
 
