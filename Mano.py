@@ -14,7 +14,14 @@ class Mano:
         print("------------")
         for x in self.mano:
             x.despliega()        
-        
+    
+    def puntuar_mano(self):
+        self.diccionario_cartas = {}
+        for carta in self.mano:
+            if carta.letra in self.diccionario_cartas:
+                self.diccionario_cartas[carta.letra] += 1
+            else:
+                self.diccionario_cartas[carta.letra] = 1        
 
 if __name__ == "__main__":
     baraja = Baraja()
