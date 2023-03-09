@@ -8,8 +8,8 @@ class Baraja:
 
     # Constructor
     def __init__(self):
-        simbolos = ["♠","♣","♦","♥","2","3","4","5","6","7","8","9","10"] 
-        letras = ["J","Q","K","A"]
+        letras = ["J","Q","K","A","2","3","4","5","6","7","8","9","10"] 
+        simbolos = ["♠","♣","♦","♥"]
 
         for simbolo in simbolos:
             for letra in letras:
