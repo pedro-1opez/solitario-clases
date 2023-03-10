@@ -22,6 +22,8 @@ class Mano:
                 self.diccionario_cartas[carta.letra] += 1
             else:
                 self.diccionario_cartas[carta.letra] = 1        
+        print(self.diccionario_cartas)
+        
 
 if __name__ == "__main__":
     baraja = Baraja()
@@ -29,4 +31,7 @@ if __name__ == "__main__":
     j2 = Mano(baraja)
     
     j1.despliega()
+    j1.puntuar_mano()
+    
     j2.despliega()
+    j2.puntuar_mano()
