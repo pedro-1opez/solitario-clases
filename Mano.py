@@ -10,7 +10,8 @@ class Mano:
         self.mano = [mazo.get_carta() for i in range(0,5)]        
         self.dpuntos = {1:1, 2:10, 3:100, 4: 1000}
         self.dmano = {x.letra:x for x in self.mano}
-
+        self.diccionario_cartas = {}
+        self.puntos = 0
 
     # Imprime la mano del jugador
     def despliega(self):
