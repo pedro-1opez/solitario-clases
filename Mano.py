@@ -8,6 +8,9 @@ class Mano:
     # Constructor
     def __init__(self, mazo:Baraja):        
         self.mano = [mazo.get_carta() for i in range(0,5)]        
+        self.dpuntos = {1:1, 2:10, 3:100, 4: 1000}
+        self.dmano = {x.letra:x for x in self.mano}
+
 
     # Imprime la mano del jugador
     def despliega(self):
@@ -22,7 +25,15 @@ class Mano:
                 self.diccionario_cartas[carta.letra] += 1
             else:
                 self.diccionario_cartas[carta.letra] = 1        
-        print(self.diccionario_cartas)
+                
+        # Puntuar de acuerdo a par, tercia o unico
+        self.puntos = 0
+        for letra, veces in self.diccionario_cartas.items():
+            carta = self.dmano[letra]
+            self.puntos += (carta.valor * self.dpuntos[veces])
+
+    def __str__(self):
+        return f"{self.diccionario_cartas} Puntos: {self.puntos}"
         
 
 if __name__ == "__main__":
@@ -32,6 +43,8 @@ if __name__ == "__main__":
     
     j1.despliega()
     j1.puntuar_mano()
+    print(j1)    
     
     j2.despliega()
     j2.puntuar_mano()
+    print(j2)
